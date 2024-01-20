@@ -108,7 +108,6 @@ function Export-SqlDatabaseToBlobContainer([string]$resourceGroupName, [string]$
     Write-Host "Starting SQL export from '$sqlServerName' for databases '$databaseNames'"
 
     $securePassword = ConvertTo-SecureString -String $sqlServerAdminPw -AsPlainText -Force 
-    $securePassword = ConvertTo-SecureString -String $sqlServerAdminPw -AsPlainText -Force 
     $sqlCredentials = New-Object System.Management.Automation.PSCredential ($sqlServerAdmin, $securePassword)
 
     foreach ($databaseName in $databaseNames.Split(",").Trim()) {
