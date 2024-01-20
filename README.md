@@ -8,6 +8,8 @@ The files created will be named in the following format: `databaseName-yyyyMMddH
 
 ## Prerequisites
 
+### Configuring Managed Identity
+
 You will need to update the RBAC permissions of the system assigned managed identity in your Azure Automation account.
 Alternatively, create a user assigned managed identity and assign it to the Azure Automation account also.
 
@@ -23,6 +25,12 @@ If you are using a user assigned managed identity, the system assigned managed i
 For more information on how to configure managed identity with runbooks, see [this tutorial on Microsoft Docs](https://learn.microsoft.com/en-us/azure/automation/learn/powershell-runbook-managed-identity)
 
 > Note: This runbook can be used together with Azure SQL database backups.
+
+### Configuring Azure Automation Runtime
+
+If you are using the recommended PowerShell 7.2 runtime version, you will need to install the `Az.ManagedServiceIdentity` module from the PowerShell Gallery in your Azure Automation account, as this is not installed by default.
+
+To do this, navigate to your Azure Automation account in the Azure portal, click on Modules under Shared Resources, and then click on Browse Gallery. Search for `Az.ManagedServiceIdentity` and install the latest version of the module.
 
 ## Parameters
 

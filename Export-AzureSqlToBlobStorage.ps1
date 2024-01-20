@@ -5,7 +5,11 @@
 	You should use this runbook if you want to backup Azure SQL databases to Blob storage using a managed identity.
 	This runbook can be used together with Azure SQL database backups.
 
-    You will need to update the RBAC permissions of the system assigned managed identity in your Azure Automation account.
+    If you are using the recommended PowerShell 7.2 runtime version, you will need to install the following module:
+
+    - Az.ManagedServiceIdentity
+
+    You will also need to update the RBAC permissions of the system assigned managed identity in your Azure Automation account.
     Alternatively, create a user assigned managed identity and assign it to the Azure Automation account also.
 
     The following permissions are required for the managed identity:
